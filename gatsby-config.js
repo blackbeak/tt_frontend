@@ -43,6 +43,16 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-plugin-netlify`,
+            options: {
+              headers: {
+                '/*': [
+                  'Referrer-Policy: origin'
+                ]
+              }
+            }
+          },
+          {
             singularName: "city",
             queryParams: {
                 populate: "*",
