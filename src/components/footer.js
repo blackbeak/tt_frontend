@@ -28,7 +28,7 @@ return (
           			<Link to="/blog" className="font-bold text-sm hover:text-emerald-500">Blog</Link>
 					</li>
 					<li key="footeraboutmenuitem">
-          			<Link to="/about" className="font-bold text-sm hover:text-emerald-500">About</Link>
+          			<Link to="https://toristy.com/about" className="font-bold text-sm hover:text-emerald-500">About</Link>
 					</li>
 				</ul>
 			</div>

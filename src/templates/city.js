@@ -32,9 +32,7 @@ const alternativeText = `A pic of something to do in ${cityName}`
 const eid = city.widgetField
 
 return (
-  console.log(eid),
-        <Layout>
-          
+        <Layout> 
           <Seo seo={seo} />
         <div className="relative h-96 w-full h-full bg-gradient-to-r from-black to-cyan-600">
         <BgImage
@@ -57,10 +55,7 @@ return (
         </div>
         <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Explore every service we have in {cityName}
         </div>
-       
-      <div className="container pb-6 px-6 space-y-4">
       <ToristyEmbed eid={eid} />
-      </div>
     </Layout>
       )
     }
