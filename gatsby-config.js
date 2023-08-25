@@ -19,6 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
+
         // LocalHost
         //apiURL: "http://localhost:1337",
         //accessToken: "9a065c20476add1c8c2677508fe565c4a49e4e4fc164494baaa2847a72e50e39cdc850cb9fe66bd1cf046fa21242186fd0125a1a105804860624c4bfefeb3c020e04bf8492a13ddeb5c31b646d8b6ced4b1eb0e157f7e6e6ce8da056630b053a6a7aab3fac2da94c08c5f0b80b8eef4a65336838d7c2b60c8aca7a601ec86786",
@@ -41,16 +42,6 @@ module.exports = {
                 },
               },
             },
-          },
-          {
-            resolve: `gatsby-plugin-netlify`,
-            options: {
-              headers: {
-                '/*': [
-                  'Referrer-Policy: origin'
-                ]
-              }
-            }
           },
           {
             singularName: "city",
@@ -98,6 +89,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
+    "gatsby-plugin-netlify",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
