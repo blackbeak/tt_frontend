@@ -5,9 +5,7 @@
     "default_configuration": "Release",
     "defines": [],
     "include_dirs": [],
-    "libraries": [],
-    "msvs_configuration_platform": "ARM64",
-    "xcode_configuration_platform": "arm64"
+    "libraries": []
   },
   "variables": {
     "arm_fpu": "neon",
@@ -401,13 +399,14 @@
     "v8_use_siphash": 1,
     "want_separate_host_toolset": 0,
     "xcode_version": "13.0",
-    "nodedir": "/Users/stevejackson/Library/Caches/node-gyp/18.17.1",
+    "nodedir": "/Users/stevejackson/.node-gyp/18.17.1",
     "standalone_static_library": 1,
     "version_git_tag": "true",
     "init_license": "MIT",
     "registry": "https://registry.yarnpkg.com",
     "version_commit_hooks": "true",
     "bin_links": "true",
+    "node_gyp": "/usr/local/bin/node-gyp",
     "save_prefix": "^",
     "strict_ssl": "true",
     "version_git_message": "v%s",
