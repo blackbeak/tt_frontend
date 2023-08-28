@@ -37,7 +37,7 @@
     "gbimage-bridge": "^0.2.2",
     "idb-keyval": "^6.2.1",
     "latest": "^0.2.0",
-    "node-gyp": "^9.4.0",
+    "node-gyp": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
