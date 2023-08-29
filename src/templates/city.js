@@ -32,7 +32,7 @@ const alternativeText = `A pic of something to do in ${cityName}`
 const eid = city.widgetField
 
 return (
-        <Layout> 
+      <Layout> 
           <Seo seo={seo} />
         <div className="relative h-96 w-full h-full bg-gradient-to-r from-black to-cyan-600">
         <BgImage

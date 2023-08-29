@@ -64,13 +64,13 @@ export default function NavBar() {
                                 <Link to="/countries">Countries</Link>
                             </li>
                             <li className="text-black text-sm font-bold hover:text-cyan-700" key="signupmenuitem">
-                                <Link to="https://toristy.com/booking-tools-for-travel-tour-and-activity-operators">Add your service</Link>
+                                <a href="https://toristy.com/booking-tools-for-travel-tour-and-activity-operators">Add your service</a>
                             </li>
                             <li className="text-black text-sm font-bold hover:text-cyan-700" key="blogmenuitem">
                                 <Link to="/blog">Blog</Link>
                             </li>
                             <li className="text-black text-sm font-bold hover:text-cyan-700" key="aboutmenuitem">
-                                <Link to="https://toristy.com/about">About</Link>
+                                <a href="https://toristy.com/about">About</a>
                             </li>
                             
                         </ul>
