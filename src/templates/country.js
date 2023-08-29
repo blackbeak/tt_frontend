@@ -102,6 +102,7 @@ query ($slug: String) {
     cities {
       headline
       cityName
+      id
       shortDesc
       slug
       longDesc {

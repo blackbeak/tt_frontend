@@ -30,6 +30,7 @@ const moreCity = city.longDesc.data.longDesc
 const background = getImage(city.cityImage.localFile)
 const alternativeText = `A pic of something to do in ${cityName}`
 const eid = city.widgetField
+const responsiveID = city.widgetResponsiveField
 
 return (
       <Layout> 
@@ -55,7 +56,7 @@ return (
         </div>
         <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Explore every service we have in {cityName}
         </div>
-      <ToristyEmbed eid={eid} />
+      <ToristyEmbed eid={eid} responsiveID={responsiveID}/>
     </Layout>
       )
     }
@@ -82,6 +83,7 @@ query ($slug: String) {
       }
     }
     widgetField
+    widgetResponsiveField
     qrImage {
       localFile {
         childImageSharp {
