@@ -1,14 +1,17 @@
-import React from "react";
+// compnent to load toristy embed.
+
+import React, { useEffect } from "react";
 
 const ToristyEmbed = ({ eid, responsiveID }) => {
-  const script = `
-    <div id="toristyiframe-responsive-${responsiveID}"></div>
-    <script async src="https://embed.toristy.com/embed.js?es=%23toristyiframe-responsive-${responsiveID}&eid=${eid}" charset="utf-8"></script>
-  `;
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://embed.toristy.com/embed.js?es=%23toristyiframe-responsive-${responsiveID}&eid=${eid}`;
+    script.async = true;
+    script.charset = "utf-8";
+    document.getElementById(`toristyiframe-responsive-${responsiveID}`).appendChild(script);
+  }, [eid, responsiveID]);
 
-  return (
-    <div dangerouslySetInnerHTML={{ __html: script }} />
-  );
+  return <div id={`toristyiframe-responsive-${responsiveID}`} />;
 };
 
 export default ToristyEmbed;

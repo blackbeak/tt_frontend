@@ -56,7 +56,9 @@ return (
         </div>
         <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Explore every service we have in {cityName}
         </div>
+        <div className="container px-6">
       <ToristyEmbed eid={eid} responsiveID={responsiveID}/>
+      </div>
     </Layout>
       )
     }
