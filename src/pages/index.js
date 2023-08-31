@@ -12,14 +12,14 @@ import WhyToristy from "../components/why-toristy"
 export default function IndexPage ({ data })
 {
   const seo = {
-    metaTitle: data.strapiGlobal.siteName,
-    metaDescription: data.strapiGlobal.siteDescription,
+    metaTitle: data.strapiIndex.headline,
+    metaDescription: data.strapiIndex.shortDesc,
   }
 
   // background image with headline, custom text and a custom search on the main page
-  const headline = data.strapiGlobal.siteName
-  const background = getImage(data.strapiGlobal.bgImage.localFile)
-  const shortDesc = "What do you do when you get there?"
+  const headline = data.strapiIndex.headline
+  const background = getImage(data.strapiIndex.homeImage.localFile)
+  const shortDesc = data.strapiIndex.shortDesc
   const alternativeText = "Toristy travel experiences"
   //
   return (
@@ -43,10 +43,15 @@ export default function IndexPage ({ data })
 
 export const query = graphql`
   query{
-    strapiGlobal {
-      siteDescription
-      siteName
-      bgImage {
+    strapiIndex {
+      headline
+      shortDesc
+      longDesc {
+        data {
+          longDesc
+        }
+      }
+      homeImage {
         localFile {
           childImageSharp {
             gatsbyImageData

@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const articlePost = path.resolve("./src/templates/article-post.js")
   const countryPost = path.resolve("./src/templates/country.js")
   const cityPost = path.resolve("./src/templates/city.js")
+  const hotelPost = path.resolve("./src/templates/hotel.js")
   //const supplierPost = path.resolve("./src/templates/supplier.js")
   //const legalPost = path.resolve("./src/templates/legal.js")
 
@@ -26,6 +27,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
         allStrapiCity {
+          nodes {
+            slug
+          }
+        }
+        allStrapiHotel {
           nodes {
             slug
           }
@@ -84,6 +90,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: cityPost,
         context: {
           slug: city.slug,
+        },
+      })
+    })
+  }
+
+  // for hotel pages
+  
+  const hot = result.data.allStrapiHotel.nodes
+
+  if (hot.length > 0) {
+    hot.forEach((hotel) => {
+      createPage({
+        path: `/hotel/${hotel.slug}`,
+        component: hotelPost,
+        context: {
+          slug: hotel.slug,
         },
       })
     })

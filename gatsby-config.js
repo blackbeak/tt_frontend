@@ -56,6 +56,9 @@ module.exports = {
             }
           },
           {
+            singularName: "hotel",
+          },
+          {
             singularName: "author",
           },
           {
@@ -72,6 +75,9 @@ module.exports = {
                 },
               },
             },
+          },
+          {
+            singularName: "index",
           },
           {
             singularName: "global",
