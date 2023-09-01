@@ -59,6 +59,9 @@ module.exports = {
             singularName: "hotel",
           },
           {
+            singularName: "testimonial",
+          },
+          {
             singularName: "author",
           },
           {
@@ -78,6 +81,9 @@ module.exports = {
           },
           {
             singularName: "index",
+          },
+          {
+            singularName: "sign-up",
           },
           {
             singularName: "global",
