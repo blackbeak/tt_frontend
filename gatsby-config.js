@@ -17,6 +17,14 @@ module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+      headers: {
+        '/*': [
+          'Referrer-Policy: origin'
+        ]
+      }
+    },
       resolve: "gatsby-source-strapi",
       options: {
 
@@ -101,7 +109,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-netlify",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
