@@ -75,6 +75,12 @@ module.exports = {
           {
             singularName: "category",
           },
+          {
+            singularName: "client",
+          },
+          {
+            singularName: "legal",
+          },
         ],
         singleTypes: [
           {
@@ -92,6 +98,9 @@ module.exports = {
           },
           {
             singularName: "sign-up",
+          },
+          {
+            singularName: "thank-you",
           },
           {
             singularName: "global",

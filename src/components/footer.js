@@ -28,14 +28,22 @@ return (
           			<Link to="/blog" className="font-bold text-sm hover:text-emerald-500">Blog</Link>
 					</li>
 					<li key="footeraboutmenuitem">
-          			<a href="https://toristy.com/about" className="font-bold text-sm hover:text-emerald-500">About</a>
+          			<Link to="/about" className="font-bold text-sm hover:text-emerald-500">About</Link>
 					</li>
 				</ul>
 			</div>
 			<div className="col-span-6 text-center md:text-left md:col-span-3">
 				<p className="pb-1 text-lg font-medium text-emerald-500">Legal</p>
 				<ul>
-				
+				<li key="footerLegalPrivacy">
+          			<Link to="/legal/privacy" className="font-bold text-sm hover:text-emerald-500">Privacy Policy</Link>
+					</li>
+					<li key="footerLegalCookies">
+          			<Link to="/legal/cookies" className="font-bold text-sm hover:text-emerald-500">Cookie Policy</Link>
+					</li>
+					<li key="footerLegalTerms">
+          			<Link to="/legal/terms" className="font-bold text-sm hover:text-emerald-500">Terms of Service</Link>
+					</li>
 			
 				</ul>
 			</div>

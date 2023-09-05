@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const cityPost = path.resolve("./src/templates/city.js")
   const hotelPost = path.resolve("./src/templates/hotel.js")
   //const supplierPost = path.resolve("./src/templates/supplier.js")
-  //const legalPost = path.resolve("./src/templates/legal.js")
+  const legalPost = path.resolve("./src/templates/legal.js")
 
   // query the slug for the dynamic pages
   const result = await graphql(
@@ -32,6 +32,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
         allStrapiHotel {
+          nodes {
+            slug
+          }
+        }
+        allStrapiLegal {
           nodes {
             slug
           }
@@ -127,20 +132,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //     })
   //   })
   // }
+  
 // Legals
-// const legals = result.data.allStrapiLegal.nodes
+const legals = result.data.allStrapiLegal.nodes
 
-// if (legals.length > 0) {
-//   legals.forEach((legal) => {
-//     createPage({
-//       path: `/legal/${legal.slug}`,
-//       component: legalPost,
-//       context: {
-//         slug: legal.slug,
-//       },
-//     })
-//   })
-// }
+if (legals.length > 0) {
+  legals.forEach((legal) => {
+    createPage({
+      path: `/legal/${legal.slug}`,
+      component: legalPost,
+      context: {
+        slug: legal.slug,
+      },
+    })
+  })
+}
 
 }
 

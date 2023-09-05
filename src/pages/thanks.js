@@ -12,13 +12,13 @@ import { getImage } from "gatsby-plugin-image"
 export default function ThanksPage ( { data } ) {
 const seo = {
       metaTitle: "Toristy Travel - Thanks for your request",
-      metaDescription: data.strapiGlobal.defaultSeo.metaDescription,
+      metaDescription: data.strapiThankYou.shortDesc,
     }
-
-const background = getImage(data.thxBg)
-const shortDesc = "Thanks for letting us know about your hotel."
-const headline = "Thanks for your submission"
-const body = "One of our staff will be in touch in due course about onboarding your hotel to the platform."
+const thx = data.strapiThankYou
+const background = getImage(thx.backgroundImage.localFile)
+const shortDesc = thx.shortDesc
+const headline = thx.headline
+const body = thx.body.data.body
 
 
    
@@ -44,17 +44,21 @@ return (
 // query from Strapi
 
 export const query = graphql`    
-query ContactQuery {
-    strapiGlobal {
-        defaultSeo {
-          metaTitle
-          metaDescription
-        }
-      }
-      thxBg: file(relativePath: {eq: "images/tt_background.jpg"}) {
+query MyQuery {
+  strapiThankYou {
+    backgroundImage {
+      localFile {
         childImageSharp {
           gatsbyImageData
         }
       }
+    }
+    shortDesc
+    headline
+    body {
+      data {
+        body
+      }
+    }
   }
-  `
+}`
