@@ -88,7 +88,7 @@ export default function SignUpPage ({ data })
       </div>
       <div className="p-8 bg-slate-100 shadow-md rounded-2xl">
       <span className="text-xs">* Required field</span>
-      <form method="post" action="put_action_here">
+      <form method="post" action="https://usebasin.com/f/0a0c57986e27">
         <input type="hidden" name="source" value="Toristy.travel Hotel request"></input>
         <div className="space-x-4 pb-2">
         <label htmlFor="firstName" className="text-cyan-700">Signatory's First Name* <input className="rounded-lg w-full" type="text" name="firstName" /></label>
