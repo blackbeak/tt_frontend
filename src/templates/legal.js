@@ -33,7 +33,7 @@ const seo = {
                       <SgHeadings title={headline} description={modified} /></div>
                   </div>
                 </div>
-                <div className="container pb-6 pt-6 space-y-4"><Reactmarkdown>{legalBody}</Reactmarkdown></div>
+                <div className="container prose-lg pb-6 pt-6"><Reactmarkdown>{legalBody}</Reactmarkdown></div> 
             </Layout>
           )
         }
