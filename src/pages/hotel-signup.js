@@ -91,10 +91,13 @@ export default function SignUpPage ({ data })
       <form method="post" action="put_action_here">
         <input type="hidden" name="source" value="Toristy.travel Hotel request"></input>
         <div className="space-x-4 pb-2">
-        <label htmlFor="firstName" className="text-cyan-700">First Name* <input className="rounded-lg w-full" type="text" name="firstName" /></label>
+        <label htmlFor="firstName" className="text-cyan-700">Signatory's First Name* <input className="rounded-lg w-full" type="text" name="firstName" /></label>
         </div>
         <div className="space-x-4 pb-2">
-        <label htmlFor="lastName" className="text-cyan-700">Last Name* <input className="rounded-lg w-full" type="text" name="lastName" /></label>
+        <label htmlFor="lastName" className="text-cyan-700">Signatory's Last Name* <input className="rounded-lg w-full" type="text" name="lastName" /></label>
+        </div>
+        <div className="space-x-4 pb-2">
+        <label htmlFor="title" className="text-cyan-700">Signatory's Title* <input className="rounded-lg w-full" type="text" name="lastName" /></label>
         </div>
         <div className="col-span-1 pb-2">
         <label htmlFor="email" className="text-cyan-700">Email* <input className="rounded-lg w-full" type="email" name="email" />
@@ -102,7 +105,7 @@ export default function SignUpPage ({ data })
         </div>
         <div className="space-x-4 pb-2">
         <label htmlFor="businessName" className="text-cyan-700">
-        Business Name* <input className="rounded-lg w-full" type="text" name="businessName" /></label>
+        Business/Hotel Name* <input className="rounded-lg w-full" type="text" name="businessName" /></label>
         </div>
         <div className="space-x-4 pb-2">
         <label htmlFor="vatNumber" className="text-cyan-700">
