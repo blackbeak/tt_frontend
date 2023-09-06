@@ -1,11 +1,14 @@
 import React from 'react';
+import QRCode from 'qrcode.react';
 
-const SupplierHeader = ({ supplierLogo, qrCode, bgColor, qrImage }) => {
+const SupplierHeader = ({ supplierLogo, qrCode, bgColor }) => {
     const imageStyle = {
-        maxHeight: '100px',  // Set the maximum height to 100 pixels
+        maxHeight: '80px',  // Set the maximum height to 100 pixels
       };
+
+  
   return (
-    <header className={`w-full bg-${bgColor} bg-opacity-80 shadow-xl sticky top-0 z-50 py-4 flex justify-between items-center`}>
+    <header className={`w-full bg-${bgColor} shadow-xl sticky top-0 z-50 py-4 flex justify-between items-center`}>
       <div className="flex items-center">
           {/* Display the partner logo */}
           <img src={supplierLogo} alt="Suppliers Logo" className="h-auto max-h-100 pl-6" style={imageStyle} />
@@ -13,7 +16,7 @@ const SupplierHeader = ({ supplierLogo, qrCode, bgColor, qrImage }) => {
       <div className="QRcode pr-6">
         <a href={qrCode}>
           {/* Display QR code */}
-          <img src={qrImage} alt="QR code of the page" className="h-auto max-h-100" style={imageStyle} />
+          <QRCode value={qrCode} fgColor="#00C07F" size="80" />
         </a>
       </div>
     </header>
@@ -21,3 +24,4 @@ const SupplierHeader = ({ supplierLogo, qrCode, bgColor, qrImage }) => {
 };
 
 export default SupplierHeader;
+

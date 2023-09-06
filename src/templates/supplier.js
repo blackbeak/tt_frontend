@@ -34,14 +34,13 @@ const slug = sup.slug
 const responsiveID = sup.responsiveID
 const logo = sup.serviceProviderLogo.localFile.url
 const qrCode = `https://toristy.travel/supplier/${slug}`
-const qrImage = sup.qrImage.url
 const bgColor = sup.headerBgColor
 // const contactName = sup.serviceContactName
 // const contactEmail = sup.serviceContactEmail
 // const contactDesc = sup.serviceContactDesc
 
 return (
-      <SupplierLayout supplierLogo={logo} qrCode={qrCode} bgColor={bgColor} qrImage={qrImage} > 
+      <SupplierLayout supplierLogo={logo} qrCode={qrCode} bgColor={bgColor} > 
           <Seo seo={seo} />
         <div className="relative h-96 w-full h-full bg-gradient-to-r from-black to-cyan-600">
         <BgImage
@@ -103,15 +102,6 @@ query ($slug: String) {
         url
         }
       }
-      qrImage {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-        url
-      }
-
     }
 }
 `

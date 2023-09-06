@@ -27,6 +27,7 @@ const seo = {
 const headline = hotel.headline
 const hotelName = hotel.hotelName
 const shortDesc = hotel.shortDesc
+const slug = hotel.slug
 const moreHotel = hotel.moreHotel.data.moreHotel
 const background = getImage(hotel.hotelImage.localFile)
 const alternativeText = `A pic of ${hotelName}`
@@ -38,13 +39,12 @@ const benefitTwo = hotel.benefitTwo
 const benefitThree = hotel.benefitThree
 const benefitFour = hotel.benefitFour
 const hotelLogo = hotel.hotelLogo.url
-const QRCode = hotel.qrImage.url
+const qrCode = `https://toristy.travel/hotel/${slug}`
 const bgColor = hotel.headerFooterBgColor
 const hotelURL = hotel.hotelURL
 
-
 return (
-      <HotelLayout hotelLogo={hotelLogo} QRCode={QRCode} bgColor={bgColor} hotelURl={hotelURL} > 
+      <HotelLayout hotelLogo={hotelLogo} qrCode={qrCode} bgColor={bgColor} hotelURL={hotelURL} > 
           <Seo seo={seo} />
         <div className="relative h-96 w-full h-full bg-gradient-to-r from-black to-cyan-600">
         <BgImage
@@ -112,14 +112,6 @@ query ($slug: String) {
       }
     eid
     responsiveID
-    qrImage {
-    url
-      localFile {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
     }
   }`
 
