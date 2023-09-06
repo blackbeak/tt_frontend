@@ -81,6 +81,9 @@ module.exports = {
           {
             singularName: "legal",
           },
+          {
+            singularName: "service-provider",
+          },
         ],
         singleTypes: [
           {
