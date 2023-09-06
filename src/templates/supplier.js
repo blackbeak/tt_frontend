@@ -27,7 +27,8 @@ const headline = sup.headline
 const supplierName = sup.serviceProviderName
 const shortDesc = sup.shortDesc
 const longDesc = sup.longDesc.data.longDesc
-const background = getImage(sup.serviceProviderImage.localFile)
+const background = getImage(sup.serviceProviderHero.localFile)
+const supplierImage = getImage(sup.serviceProviderImage.localFile)
 const alternativeText = `A pic of ${supplierName}`
 const eid = sup.eid
 const slug = sup.slug
@@ -53,7 +54,7 @@ return (
        </div> 
       <div className="container pt-6 pb-6 m-auto px-6 text-gray-600 md:px-12 xl:px-6">
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-            <div className="md:5/12 lg:w-5/12"><GatsbyImage className="rounded-3xl shadow-2xl" image={background} alt={alternativeText} /></div>
+            <div className="md:5/12 lg:w-5/12"><GatsbyImage className="rounded-3xl shadow-2xl" image={supplierImage} alt={alternativeText} /></div>
                 <div className="md:7/12 lg:w-6/12">
                   <div className="p-2 space-y-4"><Reactmarkdown>{longDesc}</Reactmarkdown></div>
                 </div>
@@ -95,6 +96,14 @@ query ($slug: String) {
         }
       }
       serviceProviderImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        url
+        }
+      }
+      serviceProviderHero {
         localFile {
           childImageSharp {
             gatsbyImageData

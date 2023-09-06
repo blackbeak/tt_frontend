@@ -29,7 +29,8 @@ const hotelName = hotel.hotelName
 const shortDesc = hotel.shortDesc
 const slug = hotel.slug
 const moreHotel = hotel.moreHotel.data.moreHotel
-const background = getImage(hotel.hotelImage.localFile)
+const background = getImage(hotel.hotelHero.localFile)
+const hotelImage = getImage(hotel.hotelImage.localFile)
 const alternativeText = `A pic of ${hotelName}`
 const eid = hotel.eid
 const responsiveID = hotel.responsiveID
@@ -59,7 +60,7 @@ return (
         <WhyHotel benefitHeadline={benefitHeadline} benefitOne={benefitOne} benefitTwo={benefitTwo} benefitThree={benefitThree} benefitFour={benefitFour} />
       <div className="container pt-6 pb-6 m-auto px-6 text-gray-600 md:px-12 xl:px-6">
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-            <div className="md:5/12 lg:w-5/12"><GatsbyImage className="rounded-3xl shadow-2xl" image={background} alt={alternativeText} /></div>
+            <div className="md:5/12 lg:w-5/12"><GatsbyImage className="rounded-3xl shadow-2xl" image={hotelImage} alt={alternativeText} /></div>
                 <div className="md:7/12 lg:w-6/12">
                   <div className="p-2 space-y-4"><Reactmarkdown>{moreHotel}</Reactmarkdown></div>
                 </div>
@@ -96,6 +97,13 @@ query ($slug: String) {
       }
     }
     hotelImage {
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+    hotelHero {
       localFile {
         childImageSharp {
           gatsbyImageData
