@@ -9,17 +9,20 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Reactmarkdown from "react-markdown"
 import WhyToristy from "../components/why-toristy"
 import SgHeadings from "../components/sg-headings"
-
+import ToristyEmbed from "../components/toristy-embed"
 
 export default function countryPage ({ data }) {
 // declare variables
 // base queries
 const country = data.strapiCountry 
-const bannerImage = getImage(country.countryImage.localFile)
+const countryImage = getImage(country.countryImage.localFile)
+const heroImage = getImage(country.heroImage.localFile)
 const countryName = country.countryName
 const headline = country.headline
 const shortDesc = country.shortDesc
 const moreCountry = country.longDesc.data.longDesc
+const eid = country.eid
+const responsiveID = country.responsiveID
 
 // SEO (headline and html title the same, URL includes slug, short desc is also used on the page)
 const seo = {
@@ -27,7 +30,7 @@ const seo = {
       metaDescription: data.strapiCountry.shortDesc,
     }
 // images from strapi for hero background 
-const background = bannerImage
+const background = heroImage
 const alternativeText = `A pic of something to do in ${countryName}`
 
 // map for cities in each country
@@ -54,7 +57,8 @@ return (
 
         <div className="container pt-6 pb-6 m-auto px-6 text-gray-600 md:px-12 xl:px-6">
           <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                 <div className="md:7/12 lg:w-6/12">
+            <div className="md:5/12 lg:w-5/12"><GatsbyImage className="rounded-3xl shadow-2xl" image={countryImage} alt={alternativeText} /></div>
+                <div className="md:7/12 lg:w-6/12">
                   <div className="p-2 space-y-4"><Reactmarkdown>{moreCountry}</Reactmarkdown></div>
                 </div>
           </div>
@@ -73,7 +77,11 @@ return (
           </Link>
         ))}
       </div>
-      <div className="container pb-6 mt-8"></div>
+      <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Unique Experiences and Things to Do In {countryName}
+        </div>
+        <div className="container px-6">
+      <ToristyEmbed eid={eid} responsiveID={responsiveID}/>
+      </div>
     </Layout>
       )
     }
@@ -87,6 +95,8 @@ query ($slug: String) {
     slug
     countryName
     shortDesc
+    eid
+    responsiveID
     longDesc {
       data {
         longDesc
@@ -99,6 +109,13 @@ query ($slug: String) {
         }
       }
     }
+    heroImage {
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+          }
+        }
+      }
     cities {
       headline
       cityName
