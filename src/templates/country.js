@@ -35,7 +35,7 @@ const background = heroImage
 const alternativeText = `A pic of something to do in ${countryName}`
 
 // map for cities in each country
-const citycards = country.cities
+const citycards = data.strapiCountry.cities
 
 return (
         <Layout>
@@ -66,7 +66,7 @@ return (
         </div>
         <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Explore cities in {countryName}
         </div>
-        <div className="container mt-6 px-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="container mt-6 px-6 grid grid-cols-3 gap-6">
         {citycards.map(citycard => (
           <Link to={`/city/` + citycard.slug} key={citycard.id} >
           <div className="overflow-hidden shadow rounded-3xl transition-shadow-2xl hover:shadow-lg">
@@ -76,6 +76,7 @@ return (
           </div>
           </Link>
         ))}
+        
       </div>
       <div className="container pt-6 pb-6 px-6 space-y-4 text-2xl text-cyan-900">Unique Experiences and Things to Do In {countryName}
         </div>
@@ -83,9 +84,10 @@ return (
       <ToristyEmbed eid={eid} responsiveID={responsiveID}/>
       </div>
     </Layout>
+    
       )
     }
-
+    
 // query from Strapi - this needs to cycle based on slug : see gatsby-node.js
 
 export const query = graphql`
