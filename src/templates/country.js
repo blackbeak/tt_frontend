@@ -28,6 +28,7 @@ const responsiveID = country.responsiveID
 const seo = {
       metaTitle: data.strapiCountry.headline,
       metaDescription: data.strapiCountry.shortDesc,
+      //shareImage: data.strapiCountry.countryImage.url
     }
 // images from strapi for hero background 
 const background = heroImage
@@ -35,7 +36,7 @@ const alternativeText = `A pic of something to do in ${countryName}`
 
 // map for cities in each country
 const citycards = country.cities
-   
+
 return (
         <Layout>
           <Seo seo={seo} />
@@ -108,6 +109,7 @@ query ($slug: String) {
         gatsbyImageData
         }
       }
+      url
     }
     heroImage {
       localFile {
@@ -127,7 +129,6 @@ query ($slug: String) {
           longDesc
         }
       }
-      widgetField
       cityImage {
         localFile {
           childImageSharp {

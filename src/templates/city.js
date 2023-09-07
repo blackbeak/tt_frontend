@@ -29,8 +29,8 @@ const shortDesc = city.shortDesc
 const moreCity = city.longDesc.data.longDesc
 const background = getImage(city.cityImage.localFile)
 const alternativeText = `A pic of something to do in ${cityName}`
-const eid = city.widgetField
-const responsiveID = city.widgetResponsiveField
+const eid = city.eid
+const responsiveID = city.responsiveID
 
 return (
       <Layout> 
@@ -84,15 +84,8 @@ query ($slug: String) {
         }
       }
     }
-    widgetField
-    widgetResponsiveField
-    qrImage {
-      localFile {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
+    eid
+    responsiveID
     }
   }`
 
