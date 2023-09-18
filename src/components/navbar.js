@@ -66,12 +66,7 @@ export default function NavBar() {
                             <li className="text-black text-sm font-bold hover:text-cyan-700" key="signupmenuitem">
                             <Link to="/hotel-signup">Add your hotel</Link>
                             </li>
-                            <li className="text-black text-sm font-bold hover:text-cyan-700" key="blogmenuitem">
-                                <Link to="/blog">Blog</Link>
-                            </li>
-                            <li className="text-black text-sm font-bold hover:text-cyan-700" key="aboutmenuitem">
-                                <Link to="/about">About</Link>
-                            </li>
+                            
                             
                         </ul>
                 </div>

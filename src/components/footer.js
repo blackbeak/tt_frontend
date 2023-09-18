@@ -22,13 +22,16 @@ return (
 				</div>
 			</div>
 			<div className="col-span-6 text-center md:text-left md:col-span-3">
-				<p className="pb-1 text-lg font-medium text-emerald-500">Quick Links</p>
+				<p className="pb-1 text-lg font-medium text-emerald-500">Links</p>
 				<ul>
 					<li key="footerblogmenuitem">
-          			<Link to="/blog" className="font-bold text-sm hover:text-emerald-500">Blog</Link>
+          			<Link to="/countries" className="font-bold text-sm hover:text-emerald-500">Countries</Link>
 					</li>
 					<li key="footeraboutmenuitem">
-          			<Link to="/about" className="font-bold text-sm hover:text-emerald-500">About</Link>
+          			<Link to="#" className="font-bold text-sm hover:text-emerald-500">Cities (coming soon)</Link>
+					</li>
+					<li key="footeraboutmenuitem">
+          			<Link to="#" className="font-bold text-sm hover:text-emerald-500">Hotels (coming soon)</Link>
 					</li>
 				</ul>
 			</div>
